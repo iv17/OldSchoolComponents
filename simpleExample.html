@@ -41,7 +41,7 @@
             var form = new Form('form1', 'form-signin');
             vp3.add(form);
 
-            var inputEmail = new InputField('i1', 'form-control', 'email', 'Email');
+            var inputEmail = new InputField('i1', 'form-control', 'email', 'Email', '');
             inputEmail.onchange = function (e) {
                 var email = inputEmail.node.value;
                 if (email.length == 0 || email.indexOf("@") == -1) {
@@ -49,7 +49,7 @@
                 }
             }
             form.add(inputEmail);
-            var inputPassword = new InputField('i2', 'form-control', 'password', 'Password');
+            var inputPassword = new InputField('i2', 'form-control', 'password', 'Password', '');
             inputPassword.onchange = function (e) {
                 var password = inputPassword.node.value;
                 if (password.length < 6) {
