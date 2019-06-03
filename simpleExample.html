@@ -41,25 +41,27 @@
             var form = new Form('form1', 'form-signin');
             vp3.add(form);
 
-            var inputEmail = new InputField('i1', 'form-control', 'email', 'Email', '');
+            var inputEmail = new InputField('inputEmailId', 'form-control', 'email', 'Email', '');
+            form.add(inputEmail);
             inputEmail.onchange = function (e) {
-                var email = inputEmail.node.value;
+                var email = inputEmailId.value;
                 if (email.length == 0 || email.indexOf("@") == -1) {
                     alert('Not a valid email address!');
                 }
             }
-            form.add(inputEmail);
-            var inputPassword = new InputField('i2', 'form-control', 'password', 'Password', '');
+            
+            var inputPassword = new InputField('inputPasswordId', 'form-control', 'password', 'Password', '');
+            form.add(inputPassword);
             inputPassword.onchange = function (e) {
-                var password = inputPassword.node.value;
+                var password = inputPasswordId.value;
                 if (password.length < 6) {
                     alert('Password must be a least 6 characters long!');
                 }
             }
-            form.add(inputPassword);
+           
             var button1 = new Button('b1', 'btn btn-lg btn-primary btn-block', 'Sign in', 'submit');
             button1.onclick = function (e) {
-                alert("Trying to login with username: " + inputEmail.node.value + " and password: " +  inputPassword.node.value);
+                alert("Trying to login with username: " + inputEmailId.value + " and password: " +  inputPasswordId.value);
             }
             form.add(button1);
 
